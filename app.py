@@ -58,7 +58,7 @@ number_prizedraw = 1715
 
 open_url()
 search_google()
-get_numbers()
+#get_numbers()
 
 phrase_search = "Mega-Sena/Concurso "
 number_prizedraw = number_prizedraw + 1
