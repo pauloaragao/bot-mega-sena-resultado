@@ -1,17 +1,26 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver import ActionChains
+from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.support.ui import WebDriverWait
+
 import time
 
-driver = webdriver.Chrome()
+def open_url():
+    try:
+        driver.get(url)
+        driver.maximize_window()
+        WebDriverWait(driver, 5)
+    except TimeoutException:
+        print("Loading took too much time!")
 
+driver = webdriver.Chrome()
 url = "https://www.google.com/"
 number_prizedraw = 1715
 
-driver.get(url)
-driver.maximize_window()
-time.sleep(5)
-
+open_url()
 elem_search = driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input")
 phrase_search = "Mega-Sena/Concurso " + str(number_prizedraw)
 elem_search.send_keys(phrase_search)
