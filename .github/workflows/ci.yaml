@@ -4,6 +4,7 @@ on: [push]
 
 jobs:
   build:
+    name: CI - Selenium Python
     runs-on: macos-latest
 
     steps:
