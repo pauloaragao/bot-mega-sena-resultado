@@ -1,3 +1,5 @@
+from action import search_google, get_numbers, back_page, open_url
+
 menu_options = {
     1: 'Rodar somente uma busca',
     2: 'Personalize sua busca',
@@ -12,7 +14,12 @@ def print_menu():
         print (key, '--', menu_options[key] )
 
 def option1():
-     print('Escolhida Opcao 1')
+    open_url()
+    search_google()
+    get_numbers()
+    phrase_search = "Mega-Sena/Concurso "
+    number_prizedraw = number_prizedraw + 1
+    back_page()
 
 def option2():
      print('Escolhida Opcao 2')

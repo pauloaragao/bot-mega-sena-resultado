@@ -8,4 +8,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 import time
 
-print ("hello app.py")
+driver = webdriver.Chrome()
+url = "https://www.google.com/"
+number_prizedraw = 1715
