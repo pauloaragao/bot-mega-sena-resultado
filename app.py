@@ -24,29 +24,17 @@ def search_google():
     time.sleep(10)
 
 def get_numbers():
-    elem_number = []
-    elem_number_1 = driver.find_element(By.XPATH, "/html/body/div[7]/div/div[10]/div/div[2]/div[2]/div/div/div[1]/div/block-component/div/div[1]/div[1]/div/div/div[1]/div/div/div[2]/div/div/div/div[1]/div/div/span[1]")
-    elem_number.append(elem_number_1)
-    print (elem_number)
-    print(elem_number_1.text)
-    time.sleep(1)
-    elem_number_2 = driver.find_element(By.XPATH, "/html/body/div[7]/div/div[10]/div/div[2]/div[2]/div/div/div[1]/div/block-component/div/div[1]/div[1]/div/div/div[1]/div/div/div[2]/div/div/div/div[1]/div/div/span[2]")
-    elem_number.append(elem_number_1)
-    print (elem_number)
-    print(elem_number_2.text)
-    time.sleep(1)
-    elem_number_3 = driver.find_element(By.XPATH, "/html/body/div[7]/div/div[10]/div/div[2]/div[2]/div/div/div[1]/div/block-component/div/div[1]/div[1]/div/div/div[1]/div/div/div[2]/div/div/div/div[1]/div/div/span[3]")
-    print(elem_number_3.text)
-    time.sleep(1)
-    elem_number_4 = driver.find_element(By.XPATH, "/html/body/div[7]/div/div[10]/div/div[2]/div[2]/div/div/div[1]/div/block-component/div/div[1]/div[1]/div/div/div[1]/div/div/div[2]/div/div/div/div[1]/div/div/span[4]")
-    print(elem_number_4.text)
-    time.sleep(1)
-    elem_number_5 = driver.find_element(By.XPATH, "/html/body/div[7]/div/div[10]/div/div[2]/div[2]/div/div/div[1]/div/block-component/div/div[1]/div[1]/div/div/div[1]/div/div/div[2]/div/div/div/div[1]/div/div/span[5]")
-    print(elem_number_5.text)
-    time.sleep(1)
-    elem_number_6 = driver.find_element(By.XPATH, "/html/body/div[7]/div/div[10]/div/div[2]/div[2]/div/div/div[1]/div/block-component/div/div[1]/div[1]/div/div/div[1]/div/div/div[2]/div/div/div/div[1]/div/div/span[6]")
-    print(elem_number_6.text)
-    time.sleep(1)
+    path_numbers = "/html/body/div[7]/div/div[10]/div/div[2]/div[2]/div/div/div[1]/div/block-component/div/div[1]/div[1]/div/div/div[1]/div/div/div[2]/div/div/div/div[1]/div/div/span["
+    i=1
+    while i<=6:
+        path_numbers_prizedraw = path_numbers+str(i)+"]"
+        number_prizedraw = driver.find_element(By.XPATH,str(path_numbers_prizedraw))
+        print(number_prizedraw.text)
+        time.sleep(1)
+        i = i + 1
+        path_numbers_prizedraw = ""
+    print("Catch numbers")
+
 
 def back_page():
     driver.back()
@@ -58,7 +46,7 @@ number_prizedraw = 1715
 
 open_url()
 search_google()
-#get_numbers()
+get_numbers()
 
 phrase_search = "Mega-Sena/Concurso "
 number_prizedraw = number_prizedraw + 1
