@@ -32,7 +32,7 @@ def get_numbers():
     time.sleep(1)
     elem_number_2 = driver.find_element(By.XPATH, "/html/body/div[7]/div/div[10]/div/div[2]/div[2]/div/div/div[1]/div/block-component/div/div[1]/div[1]/div/div/div[1]/div/div/div[2]/div/div/div/div[1]/div/div/span[2]")
     elem_number.append(elem_number_1)
-    print (elem_number)x
+    print (elem_number)
     print(elem_number_2.text)
     time.sleep(1)
     elem_number_3 = driver.find_element(By.XPATH, "/html/body/div[7]/div/div[10]/div/div[2]/div[2]/div/div/div[1]/div/block-component/div/div[1]/div[1]/div/div/div[1]/div/div/div[2]/div/div/div/div[1]/div/div/span[3]")
